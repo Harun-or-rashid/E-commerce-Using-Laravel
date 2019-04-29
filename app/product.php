@@ -14,7 +14,6 @@ class product extends Model implements HasMedia
     protected static function boot()
     {
         parent::boot();
-
         static::creating(function ($product){
         $product->slug=str_slug($product->title);
             }

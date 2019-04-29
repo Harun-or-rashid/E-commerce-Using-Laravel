@@ -23,3 +23,4 @@ class productsTableSeeder extends Seeder
     }
 
 }
+//picsum.photos/200/300/?random

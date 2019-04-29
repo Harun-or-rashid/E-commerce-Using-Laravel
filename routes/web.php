@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('master');
-});
+Route::get('/','HomeController@ShowHome')-('frontend.home');
+Route::get('/','HomeController@ShowDetails');
