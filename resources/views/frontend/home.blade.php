@@ -242,9 +242,12 @@
 
                                         <!-- Image -->
                                         <div class="image">
-
                                             {{--<a href="single-product.html" class="img"><img src="{{$product->getFirstMediaUrl()}}" alt="Product Image"></a>--}}
+
+                                            <a href="{{route('product.details',$product->slug)}}">
                                             <img class="card-img-top" src="{{$product->getFirstMediaUrl('products')}}" alt="">
+                                            </a>
+
                                             <div class="wishlist-compare">
                                                 <a href="#" data-tooltip="Compare"><i class="ti-control-shuffle"></i></a>
                                                 <a href="#" data-tooltip="Wishlist"><i class="ti-heart"></i></a>
@@ -260,8 +263,9 @@
                                             <!-- Category & Title -->
                                             <div class="category-title">
 
-                                                <a href="#" class="cat">Laptop</a>
-                                                <h5 class="title"><a href="single-product.html">{{$product->title}}</a></h5>
+
+                                                {{--<a href="{{route('product.details',$product->slug)}}">Click Here For Details..</a>--}}
+                                                <h5 class="title"><a href="{{route('product.details',$product->slug)}}">{{$product->title}}</a></h5>
 
                                             </div>
 

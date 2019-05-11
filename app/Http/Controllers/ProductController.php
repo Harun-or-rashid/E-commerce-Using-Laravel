@@ -9,10 +9,14 @@ class ProductController extends Controller
 {
     public function ShowDetails($slug)
     {
-        $product=product::where('slug',$slug)->where('active',1)->first();
+        $data=[];
+        $data['product']=product::where('slug',$slug)->where('active',1)->first();
 
-        if($product==null){
-            return redirect('frontend.home');
+        if($data['product']==null){
+            return redirect()->route('frontend.home');
+        }
+        else{
+            return view("frontend.products.details",$data);
         }
     }
 }

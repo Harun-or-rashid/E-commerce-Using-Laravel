@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/','HomeController@ShowHome')-('frontend.home');
-Route::get('/','HomeController@ShowDetails');
+Route::get('/','HomeController@ShowHome');
+Route::get('p/{slug}','ProductController@ShowDetails')->name('product.details');
