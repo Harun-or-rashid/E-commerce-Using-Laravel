@@ -13,3 +13,5 @@
 
 Route::get('/','HomeController@ShowHome');
 Route::get('p/{slug}','ProductController@ShowDetails')->name('product.details');
+Route::get('cart','CartController@ShowCart')->name('product.cart');
+Route::post('addcart','CartController@AddCart')->name('product.add');
