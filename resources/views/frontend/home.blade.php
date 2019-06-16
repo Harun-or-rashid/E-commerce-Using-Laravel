@@ -253,13 +253,24 @@
                                                 <a href="#" data-tooltip="Wishlist"><i class="ti-heart"></i></a>
                                             </div>
 
-                                            <a href="#" class="add-to-cart"><i class="ti-shopping-cart"></i><span>ADD TO CART</span></a>
+
 
                                         </div>
 
-                                        <!-- Content -->
-                                        <div class="content">
 
+                                        <!-- Content -->
+                                        <div class="card-body">
+
+                                            <div class="">
+                                                <form action="{{route('add.cart')}}" method="post">
+                                                    @csrf
+                                                    {{--<a href="#" class="add-to-cart"><i class="ti-shopping-cart"></i><span>ADD TO CART</span></a>--}}
+                                                    <input type="hidden" name="product_id" value="{{$product->id}}">
+                                                    <button type="submit" class="btn btn-outline-secondary">
+                                                        Add TO Cart
+                                                    </button>
+                                                </form>
+                                            </div>
                                             <!-- Category & Title -->
                                             <div class="category-title">
 
@@ -268,11 +279,16 @@
                                                 <h5 class="title"><a href="{{route('product.details',$product->slug)}}">{{$product->title}}</a></h5>
 
                                             </div>
-
                                             <!-- Price & Ratting -->
                                             <div class="price-ratting">
 
-                                                <h5 class="price">{{$product->price}}</h5>
+                                                <h5 class="price">
+                                                    @if($product->sale_price)
+                                                        BDT <strike>{{$product->price}}</strike> BDT {{$product->sale_price}}
+                                                        @else
+                                                    BDT{{$product->price}}
+                                                        @endif
+                                                </h5>
                                                 <div class="ratting">
                                                     <i class="fa fa-star"></i>
                                                     <i class="fa fa-star"></i>
@@ -321,7 +337,7 @@
                                                 <a href="#" data-tooltip="Wishlist"><i class="ti-heart"></i></a>
                                             </div>
 
-                                            <a href="#" class="add-to-cart"><i class="ti-shopping-cart"></i><span>ADD TO CART</span></a>
+                                            ggggggggg
 
                                         </div>
 
